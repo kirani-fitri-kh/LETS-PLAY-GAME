@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Lembah Retak Aether — MOBA 5v5 Orisinal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="game-canvas"></canvas>
+
+<!-- ================= TOP HUD ================= -->
+<div id="top-hud">
+  <div id="timer-text">00:00</div>
+  <div id="team-labels">
+    <span class="team-blue">Auroran Vanguard</span> vs <span class="team-red">Emberfall Dominion</span>
+  </div>
+</div>
+
+<!-- ================= KILL FEED ================= -->
+<div id="kill-feed"></div>
+
+<!-- ================= PLAYER HUD ================= -->
+<div id="player-hud">
+  <div class="row"><span id="level-text">Lv.1</span><span id="gold-text">500g</span><span id="kda-text">0/0/0</span></div>
+  <div class="bar-bg"><div id="hp-fill"></div></div>
+  <div class="bar-bg"><div id="mp-fill"></div></div>
+  <div id="inventory-bar"></div>
+</div>
+
+<!-- ================= MINIMAP ================= -->
+<div id="minimap-wrap">
+  <canvas id="minimap-canvas" width="180" height="180"></canvas>
+</div>
+
+<!-- ================= JOYSTICK ================= -->
+<div id="joystick-zone">
+  <div id="joystick-stick"></div>
+</div>
+
+<!-- ================= ACTION BUTTONS ================= -->
+<div id="action-buttons">
+  <div class="action-btn" id="btn-skill1">S1<div class="cd-overlay"></div></div>
+  <div class="action-btn" id="btn-skill2">S2<div class="cd-overlay"></div></div>
+  <div class="action-btn" id="btn-attack">ATK</div>
+  <div class="action-btn" id="btn-ultimate">ULT<div class="cd-overlay"></div></div>
+  <div class="action-btn" id="btn-recall">RCL</div>
+</div>
+
+<div id="btn-shop">🛒</div>
+
+<!-- ================= SHOP PANEL ================= -->
+<div id="shop-panel" class="hidden">
+  <div id="shop-header">
+    <strong>Toko Aether</strong>
+    <div id="shop-close">Tutup</div>
+  </div>
+  <div id="shop-tabs">
+    <div class="shop-tab" data-cat="boots">Boots</div>
+    <div class="shop-tab" data-cat="physical">Physical</div>
+    <div class="shop-tab" data-cat="magic">Magic</div>
+    <div class="shop-tab" data-cat="defense">Defense</div>
+    <div class="shop-tab" data-cat="jungle">Jungle</div>
+  </div>
+  <div id="shop-grid"></div>
+</div>
+
+<!-- ================= RESPAWN OVERLAY ================= -->
+<div id="respawn-overlay" class="hidden">Bangkit dalam...</div>
+
+<!-- ================= MATCH OVER ================= -->
+<div id="match-over" class="hidden">
+  <div id="match-over-text"></div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="audio.js"></script>
+<script src="map.js"></script>
+<script src="skill.js"></script>
+<script src="item.js"></script>
+<script src="hero.js"></script>
+<script src="ai.js"></script>
+<script src="ui.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
